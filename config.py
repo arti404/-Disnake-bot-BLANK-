@@ -1,5 +1,5 @@
 #Token = "" #main token
-Token = "MTA5NDE4NzgzOTk4MzQ2MDM4Mw.GUFTWk.7EgSyNHMRWbdHJpHgLeRdaOljIFfZmZYorHHs0" #artietester's token
+Token = "" #test bot token
 
 
 
