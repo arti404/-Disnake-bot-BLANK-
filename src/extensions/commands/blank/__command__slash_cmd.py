@@ -12,8 +12,8 @@ class slash_cmd(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.slash_command()
-    async def slash_cmd(self, inter: disnake.MessageInteraction):
+    @commands.slash_command(description="образец описания команды")
+    async def slash_cmd(self, inter):
         await inter.send(f"образец слеш-команды", ephemeral=True)
 
 
