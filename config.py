@@ -24,3 +24,8 @@ db_config = {
         ]
     }
 }
+
+
+
+#COMMON CONFIG
+version = '0.0.0 (blank)'

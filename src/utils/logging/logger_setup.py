@@ -3,14 +3,19 @@
 
 
 import logging
+from logging.handlers import TimedRotatingFileHandler
+
 import pathlib
 from pathlib import Path
-from logging.handlers import TimedRotatingFileHandler
+
+import os
 
 
 
 def normal(name):
     """ALWAYS put __name__ as arg!!"""
+    if not os.path.isdir("logs"):
+        os.mkdir("logs")
     file = Path(pathlib.Path.cwd(), 'logs', 'exc.log')
     logging.basicConfig(level=logging.WARNING, filename=file, filemode="a", format='%(asctime)s %(name)s %(levelname)s:%(message)s')
     logging.debug("A DEBUG Message")
@@ -23,6 +28,8 @@ def normal(name):
 
 def debug(name):
     """ALWAYS put __name__ as arg!!"""
+    if not os.path.isdir("logs"):
+        os.mkdir("logs")
     file = Path(pathlib.Path.cwd(), 'logs', 'full.log')
     logging.basicConfig(level=logging.DEBUG, filename=file, filemode="a", format='%(asctime)s %(name)s %(levelname)s:%(message)s')
     logging.debug("A DEBUG Message")
@@ -35,6 +42,8 @@ def debug(name):
 
 def test(name):
     """ALWAYS put __name__ as arg!!"""
+    if not os.path.isdir("logs"):
+        os.mkdir("logs")
     file = Path(pathlib.Path.cwd(), 'logs', 'test.log')
     logging.basicConfig(level=logging.INFO, filename=file, filemode="a", format='%(asctime)s %(name)s %(levelname)s:%(message)s')
     logging.debug("A DEBUG Message")
